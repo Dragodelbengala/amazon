@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Account</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="amazon.html">Il Tuo Negozio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="amazon.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="prodotti.html">Prodotti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrello.html">Carrello <span id="cart-count" class="badge badge-pill badge-danger">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="account.html">Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Account Form -->
+    <div class="container mt-4">
+        <h2>Accedi al Tuo Account</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email o Numero di Telefono</label>
+                <input type="text" class="form-control" id="email" placeholder="Inserisci email o numero di telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Inserisci la password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Accedi</button>
+        </form>
+    </div>
+
+    <script>
+        // Event listener for the form submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // In futuro qui potresti aggiungere una validazione o un'integrazione con un server
+            if (email && password) {
+                alert('Accesso avvenuto con successo!');
+                // Reindirizzamento a una nuova pagina dopo il login (es: profilo utente)
+                // window.location.href = 'profile.html';
+            } else {
+                alert('Inserisci tutti i dati.');
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

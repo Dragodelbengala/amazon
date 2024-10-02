@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Carrello</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="amazon.html">Il Tuo Negozio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="amazon.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="prodotti.html">Prodotti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrello.html">Carrello <span id="cart-count" class="badge badge-pill badge-danger">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="account.html">Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Il tuo Carrello</h2>
+        <div id="cart-items"></div>
+        <p>Hai aggiunto <span id="cart-items-count">0</span> prodotti al carrello.</p>
+    </div>
+
+    <script>
+        // Recupera il carrello dal local storage
+        window.onload = function() {
+            const savedCart = localStorage.getItem('cart');
+            let cart = savedCart ? JSON.parse(savedCart) : [];
+
+            document.getElementById('cart-items-count').innerText = cart.length;
+            document.getElementById('cart-count').innerText = cart.length; // Aggiorna anche la navbar
+
+            if (cart.length === 0) {
+                document.getElementById('cart-items').innerHTML = '<p>Il tuo carrello è vuoto.</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>${item}</span>
+                            <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">X</button>
+                        </div>
+                    `;
+                    document.getElementById('cart-items').appendChild(itemElement);
+                });
+            }
+        };
+
+        function removeFromCart(index) {
+            const savedCart = localStorage.getItem('cart');
+            let cart = savedCart ? JSON.parse(savedCart) : [];
+
+            cart.splice(index, 1); // Rimuove l'elemento dal carrello
+            localStorage.setItem('cart', JSON.stringify(cart)); // Aggiorna il carrello nel local storage
+
+            // Ricarica la pagina per riflettere le modifiche
+            location.reload();
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

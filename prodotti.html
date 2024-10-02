@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Prodotti</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="amazon.html">Il Tuo Negozio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="amazon.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="prodotti.html">Prodotti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrello.html">Carrello <span id="cart-count" class="badge badge-pill badge-danger">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="account.html">Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Grid -->
+    <div class="container mt-4">
+        <h2>Prodotti Disponibili</h2>
+        <div class="row">
+            <!-- Prodotto 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 1</h5>
+                        <p class="card-text">Descrizione del prodotto 1.</p>
+                        <p class="prezzo">19,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 1')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 2</h5>
+                        <p class="card-text">Descrizione del prodotto 2.</p>
+                        <p class="prezzo">29,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 2')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 3 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 3</h5>
+                        <p class="card-text">Descrizione del prodotto 3.</p>
+                        <p class="prezzo">39,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 3')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 4 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 4</h5>
+                        <p class="card-text">Descrizione del prodotto 4.</p>
+                        <p class="prezzo">49,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 4')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 5 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 5</h5>
+                        <p class="card-text">Descrizione del prodotto 5.</p>
+                        <p class="prezzo">59,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 5')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 6 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 6</h5>
+                        <p class="card-text">Descrizione del prodotto 6.</p>
+                        <p class="prezzo">69,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 6')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 7 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 7</h5>
+                        <p class="card-text">Descrizione del prodotto 7.</p>
+                        <p class="prezzo">79,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 7')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 8 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 8</h5>
+                        <p class="card-text">Descrizione del prodotto 8.</p>
+                        <p class="prezzo">89,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 8')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prodotto 9 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Prodotto 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Prodotto 9</h5>
+                        <p class="card-text">Descrizione del prodotto 9.</p>
+                        <p class="prezzo">99,99 €*</p>
+                        <button class="btn btn-primary" onclick="addToCart('Prodotto 9')">Aggiungi al Carrello</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(product) {
+            cart.push(product);
+            updateCartCount();
+            localStorage.setItem('cart', JSON.stringify(cart)); // Salva il carrello nel local storage
+        }
+
+        function updateCartCount() {
+            const cartCount = cart.length;
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        // Recupera il carrello dal local storage all'avvio della pagina
+        document.addEventListener('DOMContentLoaded', function() {
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                updateCartCount();
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
